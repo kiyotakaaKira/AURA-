@@ -1,0 +1,36 @@
+{
+    "user_id": "user_001",
+    "last_updated": 1780805653.783562,
+    "calibration": {
+        "interaction_zone": [
+            0.2,
+            0.8,
+            0.2,
+            0.8
+        ],
+        "cursor_sensitivity": 1.0,
+        "click_threshold": 0.035,
+        "activation_hold_time_ms": 500,
+        "scroll_sensitivity": 1.0
+    },
+    "preferences": {
+        "smoothing_algorithm": "one_euro",
+        "one_euro_min_cutoff": 1.0,
+        "one_euro_beta": 0.007,
+        "scroll_speed": 1.0,
+        "volume_sensitivity": 1.0,
+        "hud_opacity": 0.92,
+        "dominant_hand": "right",
+        "auto_sleep_timeout_s": 3.0
+    },
+    "habits": {
+        "most_used_gestures": [],
+        "gesture_use_counts": {},
+        "most_used_apps": [],
+        "session_count": 22,
+        "total_interaction_minutes": 47.815127126375835,
+        "false_trigger_count": 0
+    },
+    "calibrated_click": 0.09085725955517884,
+    "calibrated_release": 0.15
+}

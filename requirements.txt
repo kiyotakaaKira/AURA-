@@ -1,0 +1,37 @@
+# AURA — Adaptive User Reality Assistant
+# Requirements
+# Generated for Python 3.10+
+
+# Core computer vision
+mediapipe==0.10.14
+opencv-python>=4.8.0
+
+# System control
+pyautogui>=0.9.54
+pynput>=1.7.6
+
+# Numerical / scientific
+numpy>=1.24.0
+scipy>=1.11.0
+filterpy>=1.4.5
+
+# Configuration
+PyYAML>=6.0
+
+# Utilities
+dataclasses-json>=0.6.0
+
+# Platform-specific (install manually based on OS)
+# Windows:
+#   pycaw>=20181228
+#   pywin32>=306
+#
+# macOS:
+#   pyobjc-framework-Quartz>=9.0
+#
+# Linux:
+#   (no additional requirements — uses pactl subprocess)
+
+# Future (Phase 2 — do not install now)
+# torch>=2.0.0
+# torchvision>=0.15.0
