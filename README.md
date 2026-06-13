@@ -185,7 +185,7 @@ The result is a system that feels natural enough that users stop thinking about 
 │                         AURA SYSTEM ARCHITECTURE                    │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│   ┌─────────────┐    Thread 2 (Tracking)    ┌───────────────────┐  │
+│   ┌─────────────┐    Thread 2 (Tracking)    ┌───────────────────┐   │
 │   │   WEBCAM    │──────────────────────────▶│  PERCEPTION       │  │
 │   │  (Sensor)   │                           │  ENGINE           │  │
 │   └─────────────┘                           │                   │  │
@@ -208,48 +208,48 @@ The result is a system that feels natural enough that users stop thinking about 
 │   ┌───────────────────────────────────────┬──────────▼──────────┐  │
 │   │            INTELLIGENCE LAYER         │  Thread 1 (Main)    │  │
 │   │                                       │                     │  │
-│   │  ┌─────────────┐  ┌───────────────┐  │  ┌───────────────┐  │  │
-│   │  │  Presence   │  │    Gesture    │  │  │   Smoothing   │  │  │
-│   │  │  Tracker    │  │    Engine     │  │  │   Pipeline    │  │  │
-│   │  │             │  │               │  │  │               │  │  │
-│   │  │  ABSENT     │  │  • Static     │  │  │  Pre-filter   │  │  │
-│   │  │     ↕       │  │    Classifier │  │  │  Dead Zone    │  │  │
-│   │  │  READY      │  │  • Temporal   │  │  │  1€ Filter    │  │  │
-│   │  │             │  │    Classifier │  │  │  Kalman       │  │  │
-│   │  └─────────────┘  └───────────────┘  │  │  Adaptive     │  │  │
+│   │  ┌─────────────┐  ┌───────────────┐  │  ┌───────────────┐   │  │
+│   │  │  Presence   │  │    Gesture    │  │  │   Smoothing   │   │  │
+│   │  │  Tracker    │  │    Engine     │  │  │   Pipeline    │   │  │
+│   │  │             │  │               │  │  │               │   │  │
+│   │  │  ABSENT     │  │  • Static     │  │  │  Pre-filter   │   │  │
+│   │  │     ↕       │  │    Classifier │  │  │  Dead Zone    │   │  │
+│   │  │  READY      │  │  • Temporal   │  │  │  1€ Filter    │   │  │
+│   │  │             │  │    Classifier │  │  │  Kalman       │   │  │
+│   │  └─────────────┘  └───────────────┘  │  │  Adaptive     │   │  │
 │   │                                       │  │  Sensitivity  │  │  │
-│   │  ┌─────────────┐  ┌───────────────┐  │  └───────┬───────┘  │  │
-│   │  │    Idle     │  │   Context     │  │          │          │  │
-│   │  │  Detector   │  │   Detector    │  │          │          │  │
-│   │  │             │  │               │  │          ▼          │  │
-│   │  │  Fatigue    │  │  Active App   │  │  pyautogui.moveTo() │  │
-│   │  │  Prevention │  │  Detection    │  │                     │  │
-│   │  └─────────────┘  └───────────────┘  │                     │  │
+│   │  ┌─────────────┐  ┌───────────────┐  │  └───────┬───────┘   │  │
+│   │  │    Idle     │  │   Context     │  │          │           │  │
+│   │  │  Detector   │  │   Detector    │  │          │           │  │
+│   │  │             │  │               │  │          ▼           │  │
+│   │  │  Fatigue    │  │  Active App   │  │  pyautogui.moveTo()  │  │
+│   │  │  Prevention │  │  Detection    │  │                      │  │
+│   │  └─────────────┘  └───────────────┘  │                      │  │
 │   └───────────────────────────────────────┘                     │  │
-│                                                                  │  │
+│                                                                 │  │
 │   ┌──────────────────────────────────────────────────────────┐  │  │
 │   │                    CONTROL LAYER                         │  │  │
 │   │                                                          │  │  │
-│   │   ┌──────────────┐  ┌──────────────┐  ┌─────────────┐  │  │  │
-│   │   │    MOUSE     │  │    CLICK     │  │   SCROLL    │  │  │  │
-│   │   │  CONTROLLER  │  │   ENGINE     │  │   ENGINE    │  │  │  │
-│   │   │              │  │              │  │             │  │  │  │
-│   │   │  5-layer     │  │  State       │  │  Velocity   │  │  │  │
-│   │   │  smoothed    │  │  machine:    │  │  mapping +  │  │  │  │
-│   │   │  cursor      │  │  click/drag  │  │  momentum   │  │  │  │
-│   │   │  movement    │  │  /dblclick   │  │  physics    │  │  │  │
-│   │   └──────────────┘  └──────────────┘  └─────────────┘  │  │  │
+│   │   ┌──────────────┐  ┌──────────────┐  ┌─────────────┐    │  │  │
+│   │   │    MOUSE     │  │    CLICK     │  │   SCROLL    │    │  │  │
+│   │   │  CONTROLLER  │  │   ENGINE     │  │   ENGINE    │    │  │  │
+│   │   │              │  │              │  │             │    │  │  │
+│   │   │  5-layer     │  │  State       │  │  Velocity   │    │  │  │
+│   │   │  smoothed    │  │  machine:    │  │  mapping +  │    │  │  │
+│   │   │  cursor      │  │  click/drag  │  │  momentum   │    │  │  │
+│   │   │  movement    │  │  /dblclick   │  │  physics    │    │  │  │
+│   │   └──────────────┘  └──────────────┘  └─────────────┘    │  │  │
 │   └──────────────────────────────────────────────────────────┘  │  │
-│                                                                  │  │
+│                                                                 │  │
 │   ┌──────────────────────────────────────────────────────────┐  │  │
 │   │                     UI LAYER                             │  │  │
 │   │                                                          │  │  │
-│   │   ┌──────────────┐  ┌──────────────┐  ┌─────────────┐  │  │  │
-│   │   │     HUD      │  │   FLOATING   │  │  TUTORIAL   │  │  │  │
-│   │   │  COMPOSITOR  │  │    CAMERA    │  │   MANAGER   │  │  │  │
-│   │   └──────────────┘  └──────────────┘  └─────────────┘  │  │  │
+│   │   ┌──────────────┐  ┌──────────────┐  ┌─────────────┐    │  │  │
+│   │   │     HUD      │  │   FLOATING   │  │  TUTORIAL   │    │  │  │
+│   │   │  COMPOSITOR  │  │    CAMERA    │  │   MANAGER   │    │  │  │
+│   │   └──────────────┘  └──────────────┘  └─────────────┘    │  │  │
 │   └──────────────────────────────────────────────────────────┘  │  │
-└─────────────────────────────────────────────────────────────────────┘
+└────────────────────────────────────────────────────────────────────┘
 ```
 
 ### The 5-Layer Cursor Smoothing Pipeline
@@ -556,29 +556,6 @@ Priority 5 → No Action          (any other configuration)
 
 ---
 
-## 📸 Screenshots
-
-<div align="center">
-
-### Main Interface
-
-| AURA Active | Tutorial Mode | Floating Camera |
-|---|---|---|
-| ![Main HUD](assets/screenshots/main_hud.png) | ![Tutorial](assets/screenshots/tutorial.png) | ![Camera Window](assets/screenshots/camera_window.png) |
-| *Dark premium HUD with gesture detection* | *Step-by-step onboarding with live feedback* | *Draggable floating camera overlay* |
-
-> 📌 **For Contributors:** Replace placeholder images above with actual screenshots. Recommended size: 400×300px. Store in `assets/screenshots/`.
-
-### Gesture Visualization
-
-| Cursor Control | Pinch Click | Scroll Mode |
-|---|---|---|
-| ![Cursor](assets/screenshots/gesture_cursor.png) | ![Click](assets/screenshots/gesture_click.png) | ![Scroll](assets/screenshots/gesture_scroll.png) |
-| *Index fingertip tracking with skeleton* | *Pinch indicator turns green at threshold* | *Two-finger scroll with direction arrow* |
-
-</div>
-
----
 
 ## 🗺️ Roadmap
 
