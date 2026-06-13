@@ -73,9 +73,13 @@ class SplashScreen:
             tag_alpha = min(1.0, (elapsed - 3.0) / 2.0) * logo_scene_alpha
             tag_color = (int(TEXT_SECONDARY[0] * tag_alpha), int(TEXT_SECONDARY[1] * tag_alpha), int(TEXT_SECONDARY[2] * tag_alpha))
             
-            tag_text = "The Future of Human Interaction"
+            tag_text = "Adaptive User Response Assistant"
             tag_size = cv2.getTextSize(tag_text, FONT_FACE, 0.8, 1)[0]
             self._create_glow_text(canvas, tag_text, (cx - tag_size[0] // 2, cy + 40), FONT_FACE, 0.8, tag_color, 1, 0.3)
+            
+            by_text = "by KIYOTAKA"
+            by_size = cv2.getTextSize(by_text, FONT_FACE, 0.5, 1)[0]
+            self._create_glow_text(canvas, by_text, (cx - by_size[0] // 2, cy + 70), FONT_FACE, 0.5, tag_color, 1, 0.3)
             
             # Very fast light sweep on tagline
             sweep = (elapsed - 3.0) * 1000 - 200
@@ -120,8 +124,12 @@ class SplashScreen:
             self._create_glow_text(canvas, "AURA", (text_x, text_y), FONT_FACE, 3.0, logo_c, 2, 0.8)
             
             tag_c = (int(TEXT_SECONDARY[0] * hero_alpha), int(TEXT_SECONDARY[1] * hero_alpha), int(TEXT_SECONDARY[2] * hero_alpha))
-            tag_text = "Human Computer Interface Reimagined"
+            tag_text = "Adaptive User Response Assistant"
             tag_size = cv2.getTextSize(tag_text, FONT_FACE, 0.8, 1)[0]
             self._create_glow_text(canvas, tag_text, (cx - tag_size[0] // 2, cy + 40), FONT_FACE, 0.8, tag_c, 1, 0.3)
+            
+            by_text = "by KIYOTAKA"
+            by_size = cv2.getTextSize(by_text, FONT_FACE, 0.5, 1)[0]
+            self._create_glow_text(canvas, by_text, (cx - by_size[0] // 2, cy + 70), FONT_FACE, 0.5, tag_c, 1, 0.3)
             
         return canvas

@@ -170,6 +170,15 @@ class HUDComponents:
             conf = int(op_data.get("confidence", 0.0) * 100)
             cv2.putText(canvas, f"Confidence: {conf}%", (dx + 20, dy + 200), FONT_FACE, 0.5, TEXT_SECONDARY, 1, cv2.LINE_AA)
 
+        # 5. Footer & About Section (Bottom Left)
+        fy = self.window_h - 120
+        fx = 40
+        self._draw_glass_panel(canvas, fx, fy, 320, 95, alpha=0.8)
+        cv2.putText(canvas, "AURA - Adaptive User Response Assistant", (fx + 15, fy + 25), FONT_FACE, 0.45, TEXT_PRIMARY, 1, cv2.LINE_AA)
+        cv2.putText(canvas, "Version 4.0 | KIYOTAKA Branding", (fx + 15, fy + 45), FONT_FACE, 0.4, TEXT_SECONDARY, 1, cv2.LINE_AA)
+        cv2.putText(canvas, "Developed by Adithyan (KIYOTAKA)", (fx + 15, fy + 65), FONT_FACE, 0.4, TEXT_MUTED, 1, cv2.LINE_AA)
+        cv2.putText(canvas, "(c) 2026 KIYOTAKA. All Rights Reserved.", (fx + 15, fy + 85), FONT_FACE, 0.4, TEXT_MUTED, 1, cv2.LINE_AA)
+
     def draw_tutorial_ui(self, canvas, tutorial, illustrator, click_engine, hand, mouse_pos):
         step = tutorial.current_step
         if not step: return

@@ -5,6 +5,14 @@
 
 <br/>
 
+## Creator & Brand
+
+AURA was created and developed by Adithyan under the KIYOTAKA brand.
+
+© 2026 KIYOTAKA. All Rights Reserved.
+
+<br/>
+
 <!-- BADGES ROW 1 -->
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.8%2B-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org)
