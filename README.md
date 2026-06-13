@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- LOGO / BANNER -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0a0f,50:1a1a3e,100:4D9EFF&height=200&section=header&text=AURA&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Adaptive%20User%20Reality%20Assistant&descAlignY=58&descSize=22&descColor=8888AA" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0a0a0f,50:1a1a3e,100:4D9EFF&height=200&section=header&text=AURA&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Adaptive%20User%20Response%20Assistant&descAlignY=58&descSize=22&descColor=8888AA" width="100%"/>
 
 <br/>
 
@@ -87,7 +87,7 @@
 
 </div>
 
-**AURA** (Adaptive User Reality Assistant) is an open-source research project at the intersection of **Computer Vision**, **Artificial Intelligence**, and **Human-Computer Interaction**. It transforms a standard webcam into an intelligent gesture-tracking system capable of replacing traditional mouse input with natural hand movements.
+**AURA** (Adaptive User Response Assistant) is an open-source research project at the intersection of **Computer Vision**, **Artificial Intelligence**, and **Human-Computer Interaction**. It transforms a standard webcam into an intelligent gesture-tracking system capable of replacing traditional mouse input with natural hand movements.
 
 Unlike academic gesture recognition demos that require specialized depth cameras, motion gloves, or controlled environments — AURA runs on a standard laptop webcam in real-time, making advanced HCI research accessible to anyone.
 
